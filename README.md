@@ -1,6 +1,7 @@
-zalando task 1
-
-# Getting Started with Create React App
+# Intro
+This is a country/city click button game!
+- when user click the right city and country the buttons will disappear. 
+- The goal of the game is to eliminate all buttons!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
