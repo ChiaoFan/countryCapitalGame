@@ -1,4 +1,14 @@
 import React, {useState, useEffect} from "react";
+import styled from 'styled-components';
+
+const Button = styled.button`
+        color: #38385D;
+        font-size: 1em;
+        margin: 1em;
+        padding: 0.25em 1em;
+        border: 2px solid #38385D;
+        border-radius: 3px;
+        `;
 
 export default function CountryCapitalGame({ data }) {
     // Use console.log() for debugging
@@ -6,6 +16,7 @@ export default function CountryCapitalGame({ data }) {
     const [clickedValue, setClickedValue] = useState([]);
     const [isMatch, setIsMatch] = useState(false);
     const [dataArray, setDataArray] = useState([]);
+
 
     useEffect(()=>{
 
@@ -42,15 +53,15 @@ export default function CountryCapitalGame({ data }) {
                 });
 
                 if(!isMatch){
-                    document.getElementById(clickedValue[0]).style.backgroundColor = "red";
-                    document.getElementById(value).style.backgroundColor = "red";
+                    document.getElementById(clickedValue[0]).style.backgroundColor = "#FF6347";
+                    document.getElementById(value).style.backgroundColor = "#FF6347";
                 }
 
             
             setClickedValue([...clickedValue, value]);
             }
         }else{
-            event.currentTarget.style.backgroundColor = 'blue';
+            event.currentTarget.style.backgroundColor = '#89CFF0';
             setIsMatch(false);
             setClickedValue([value]);
         }
@@ -63,7 +74,7 @@ export default function CountryCapitalGame({ data }) {
         <div>
         
         {dataArray.map((val) => {
-            return <button key={val} id={val} onClick={(event) => buttonClickHandler(event, val)}>{val}</button> 
+            return <Button key={val} id={val} onClick={(event) => buttonClickHandler(event, val)}>{val}</Button> 
         })}
         {dataArray.length === 0 && <p>Congratulations</p>}
         </div>
